@@ -4,7 +4,8 @@
       "Bash(npm create:*)",
       "Bash(npm init -y)",
       "Bash(npm install:*)",
-      "Bash(npm run build)"
+      "Bash(npm run build)",
+      "Bash(CI=true pnpm run:*)"
     ],
     "deny": [],
     "ask": []
