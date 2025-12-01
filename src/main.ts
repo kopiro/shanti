@@ -3,8 +3,8 @@ import "./style.css";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="container">
     <header class="header">
-      <img src="/logo.svg" alt="SCIANTI Beauty Studio" class="logo" />
-      <h1 class="studio-name">SCIANTI</h1>
+      <img src="/logo.svg" alt="Shanti Beauty Studio" class="logo" />
+      <h1 class="studio-name">Shanti</h1>
       <p class="tagline">Beauty Studio</p>
     </header>
 
@@ -40,7 +40,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     </main>
 
     <footer class="footer">
-      <p>&copy; ${new Date().getFullYear()} SCIANTI Beauty Studio. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} Shanti Beauty Studio. All rights reserved.</p>
     </footer>
   </div>
 `;
