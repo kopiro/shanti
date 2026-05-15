@@ -63,12 +63,20 @@ body {
     url("./brand-cloud.png"),
     url("./brand-cloud.png"),
     url("./brand-cloud.png"),
+    url("./brand-cloud.png"),
+    url("./brand-cloud.png"),
+    url("./brand-cloud.png"),
+    url("./brand-cloud.png"),
     url("./brand-cloud.png");
   background-position:
     left -380px top 1rem,
     right -430px top 12rem,
     left -410px top 31rem,
     right -360px top 50rem,
+    left -420px top 112rem,
+    right -390px top 132rem,
+    left -360px bottom 38rem,
+    right -450px bottom 23rem,
     left -440px top 72rem,
     right -430px top 92rem,
     left -390px bottom 13rem,
@@ -79,6 +87,10 @@ body {
     690px auto,
     740px auto,
     800px auto,
+    730px auto,
+    760px auto,
+    660px auto,
+    700px auto,
     690px auto,
     760px auto,
     700px auto,
@@ -234,7 +246,7 @@ body {
 .hero-section {
   position: relative;
   isolation: isolate;
-  min-height: clamp(30rem, 58vw, 43rem);
+  min-height: clamp(30rem, 58vw, 40rem);
   margin-bottom: 0;
 }
 
@@ -408,7 +420,7 @@ address p {
   color: var(--color-text-light);
   font-size: 0.9rem;
   line-height: 1.8;
-  padding-top: 1rem;
+  padding-top: 3rem;
   border-top: 1px solid var(--color-accent);
 }
 
@@ -600,8 +612,11 @@ address p {
 
 .service-image {
   display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   width: 100%;
-  height: 350px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -621,19 +636,19 @@ address p {
 }
 
 .service-row:nth-child(1) .service-image {
-  object-position: center 45%;
+  object-position: right center;
 }
 
 .service-row:nth-child(2) .service-image {
-  object-position: center 48%;
+  object-position: left center;
 }
 
 .service-row:nth-child(3) .service-image {
-  object-position: center 48%;
+  object-position: right center;
 }
 
 .service-row:nth-child(4) .service-image {
-  object-position: center 52%;
+  object-position: left center;
 }
 
 .contact-section {
@@ -681,7 +696,7 @@ address p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .contact-link {
@@ -833,6 +848,10 @@ address p {
       right -340px top 12rem,
       left -340px top 30rem,
       right -310px top 48rem,
+      left -330px top 98rem,
+      right -320px top 114rem,
+      left -300px bottom 30rem,
+      right -340px bottom 18rem,
       left -350px top 66rem,
       right -340px top 82rem,
       left -320px bottom 10rem,
@@ -842,6 +861,10 @@ address p {
       470px auto,
       500px auto,
       520px auto,
+      490px auto,
+      510px auto,
+      450px auto,
+      470px auto,
       460px auto,
       500px auto,
       460px auto,
@@ -1036,7 +1059,7 @@ address p {
 
   .service-copy {
     width: 100%;
-    min-height: 260px;
+    min-height: 350px;
     padding: 1.5rem 1.2rem;
   }
 
@@ -1051,7 +1074,7 @@ address p {
   }
 
   .service-image {
-    height: 260px;
+    height: 100%;
   }
 
   .booking-section {
