@@ -179,22 +179,34 @@
             <h2 id="services-title">SERVIZI</h2>
             <p class="about-subtitle">Trattamenti beauty personalizzati</p>
           </div>
-          <div class="services-grid" aria-label="Servizi principali">
-            <article class="service-item">
-              <h3>Viso</h3>
-              <p>Pulizia viso, protocolli mirati e rituali pensati per valorizzare la pelle.</p>
+          <div class="services-list" aria-label="Servizi principali">
+            <article class="service-row">
+              <img class="service-image" src="./viso.jpg" alt="Trattamento viso" />
+              <div class="service-copy service-copy-left">
+                <h3>Viso</h3>
+                <p>Pulizia viso, protocolli mirati e rituali pensati per valorizzare la pelle.</p>
+              </div>
             </article>
-            <article class="service-item">
-              <h3>Corpo</h3>
-              <p>Massaggi e trattamenti corpo personalizzati per benessere, leggerezza e relax.</p>
+            <article class="service-row">
+              <img class="service-image" src="./corpo.jpg" alt="Trattamento corpo" />
+              <div class="service-copy service-copy-right">
+                <h3>Corpo</h3>
+                <p>Massaggi e trattamenti corpo personalizzati per benessere, leggerezza e relax.</p>
+              </div>
             </article>
-            <article class="service-item">
-              <h3>Unghie</h3>
-              <p>Manicure, pedicure, semipermanente, gel e ricostruzione unghie.</p>
+            <article class="service-row">
+              <img class="service-image" src="./makeup.jpg" alt="Make up e servizi beauty" />
+              <div class="service-copy service-copy-left">
+                <h3>Beauty</h3>
+                <p>Cerette, make up e servizi estetici essenziali curati nei dettagli.</p>
+              </div>
             </article>
-            <article class="service-item">
-              <h3>Beauty</h3>
-              <p>Cerette, make up e servizi estetici essenziali curati nei dettagli.</p>
+            <article class="service-row">
+              <img class="service-image" src="./mani.jpg" alt="Manicure e cura delle mani" />
+              <div class="service-copy service-copy-right">
+                <h3>Unghie</h3>
+                <p>Manicure, pedicure, semipermanente, gel e ricostruzione unghie.</p>
+              </div>
             </article>
           </div>
         </section>
@@ -366,8 +378,7 @@
       };
 
       const setHeaderState = () => {
-        const homeBottom = homeSection.getBoundingClientRect().bottom;
-        document.body.classList.toggle("header-compact", homeBottom <= 120);
+        document.body.classList.toggle("header-compact", window.scrollY >= 600);
       };
 
       window.addEventListener("scroll", () => {
