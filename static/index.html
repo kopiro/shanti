@@ -78,34 +78,128 @@
     <div class="container">
       <header class="header">
         <img src="./logo.png" alt="Shanti Beauty Studio" class="logo" />
-        <nav class="site-nav" aria-label="Menu principale">
-          <a class="nav-link is-active" href="./index.html" aria-current="page">
-            Home
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Apri menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Menu principale">
+          <a class="nav-link is-active" href="#home" aria-current="page">Home</a>
+          <a class="nav-link" href="#filosofia">Filosofia</a>
+          <a class="nav-link" href="#chi-siamo">Chi siamo</a>
+          <a class="nav-link" href="#servizi">Servizi</a>
+          <a class="nav-link" href="#contatti">Contatti</a>
+          <a
+            class="nav-cta"
+            href="https://cal.com/shanti-beauty-studio-xatskc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Prenota
           </a>
-          <a class="nav-link" href="./chi-siamo.html">Chi siamo</a>
-          <a class="nav-link" href="./contatti.html">Contatti</a>
         </nav>
       </header>
 
       <main class="main">
-        <section class="info-section">
-          <div class="address">
-            <h2>Vieni A Trovarci</h2>
-            <address>
-              <p>Viale Gabriele D'Annunzio, 222-226</p>
-              <p>65127 Pescara PE</p>
-              <p>Italy</p>
-            </address>
-            <p class="hours">
-              <strong>Orari:</strong><br />
-              Lunedi - Mercoledi - Sabato: 9:30 - 17:30<br />
-              Martedi - Giovedi - Venerdi: 9:30 - 19:30<br />
-              Domenica: Chiuso
+        <section id="home" class="hero-section page-section" aria-label="Home"></section>
+
+        <section id="filosofia" class="philosophy-section page-section" aria-labelledby="philosophy-title">
+          <div class="section-heading">
+            <h2 id="philosophy-title">FILOSOFIA</h2>
+          </div>
+          <div class="concept-content" aria-labelledby="concept-title">
+            <h3 id="concept-title">IL CONCEPT</h3>
+            <p class="about-subtitle">Pace interiore, bellezza autentica</p>
+            <p>
+              Shanti Beauty Studio è un istituto di bellezza pensato per creare
+              un'oasi di tranquillità all'interno del contesto urbano.
+            </p>
+            <p>
+              Il nome Shanti, che in sanscrito significa "pace interiore",
+              rappresenta la filosofia del salone: un luogo dove ritrovare
+              l'armonia e l'equilibrio nel corpo, nella mente e nello spirito,
+              per sentirsi bene e riscoprire il valore che ognuno merita.
+            </p>
+            <p>
+              Il nostro centro propone servizi che spaziano dalla cura del viso
+              al corpo, con rituali di bellezza personalizzati di alta qualità,
+              pensati al dettaglio per ogni esigenza.
+            </p>
+            <p>
+              Shanti Beauty Studio si impegna ad esaltare e valorizzare la
+              bellezza unica di ogni persona, promuovendo il benessere come
+              stile di vita.
             </p>
           </div>
         </section>
 
-        <section class="booking-section">
+        <section id="chi-siamo" class="about-section page-section" aria-labelledby="about-title">
+          <div class="about-media">
+            <img
+              class="about-photo"
+              src="./michela-ciavarella.png"
+              alt="Ritratto di Michela Ciavarella"
+            />
+          </div>
+          <div class="about-content">
+            <h2 id="about-title">MICHELA CIAVARELLA</h2>
+            <p class="about-subtitle">Fondatrice, Estetista &amp; Beauty Specialist</p>
+            <p>
+              Mi dedico da quasi dieci anni al mondo dell'estetica e del
+              benessere, un settore scelto per il valore del contatto umano,
+              dell'ascolto e della cura autentica della persona.
+            </p>
+            <p>
+              Il mio percorso è iniziato in Puglia, con una formazione solida
+              presso la Cesvim Academy: qualifica biennale, specializzazione di
+              estetista e oltre 1.300 ore di preparazione teorica e pratica.
+            </p>
+            <p>
+              A Pescara ho ampliato la mia esperienza lavorando in centri
+              estetici tradizionali e in realtà specializzate in tecnologie
+              avanzate, sviluppando una visione completa e personalizzata del
+              benessere.
+            </p>
+            <p>
+              Il mio obiettivo è offrire trattamenti su misura, costruiti con
+              tecnica, empatia e attenzione al dettaglio, per far sentire ogni
+              persona accolta, valorizzata e profondamente rigenerata.
+            </p>
+          </div>
+        </section>
+
+        <section id="servizi" class="services-section page-section" aria-labelledby="services-title">
+          <div class="section-heading">
+            <h2 id="services-title">SERVIZI</h2>
+            <p class="about-subtitle">Trattamenti beauty personalizzati</p>
+          </div>
+          <div class="services-grid" aria-label="Servizi principali">
+            <article class="service-item">
+              <h3>Viso</h3>
+              <p>Pulizia viso, protocolli mirati e rituali pensati per valorizzare la pelle.</p>
+            </article>
+            <article class="service-item">
+              <h3>Corpo</h3>
+              <p>Massaggi e trattamenti corpo personalizzati per benessere, leggerezza e relax.</p>
+            </article>
+            <article class="service-item">
+              <h3>Unghie</h3>
+              <p>Manicure, pedicure, semipermanente, gel e ricostruzione unghie.</p>
+            </article>
+            <article class="service-item">
+              <h3>Beauty</h3>
+              <p>Cerette, make up e servizi estetici essenziali curati nei dettagli.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="booking-section" aria-label="Prenotazione">
           <a
             class="booking-button"
             href="https://cal.com/shanti-beauty-studio-xatskc"
@@ -115,6 +209,106 @@
             Prenota Il Tuo Appuntamento
           </a>
         </section>
+
+        <section id="contatti" class="contact-section page-section" aria-labelledby="contact-title">
+          <div class="contact-content">
+            <h2 id="contact-title">CONTATTI</h2>
+
+            <address class="contact-address">
+              <svg
+                class="contact-pin"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                width="34"
+                height="34"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 10c0 5-8 11-8 11s-8-6-8-11a8 8 0 1 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div class="contact-address-text">
+                <p>Viale Gabriele D'Annunzio, 222-226</p>
+                <p>65127 Pescara PE</p>
+                <p>Italia</p>
+              </div>
+            </address>
+
+            <div class="contact-links" aria-label="Link contatti">
+              <a
+                class="contact-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Viale%20Gabriele%20D%27Annunzio%2C%20222-226%2C%2065127%20Pescara%20PE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Maps
+              </a>
+              <a
+                class="contact-link"
+                href="https://maps.apple.com/?q=Viale%20Gabriele%20D%27Annunzio%2C%20222-226%2C%2065127%20Pescara%20PE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apple Maps
+              </a>
+            </div>
+
+            <p class="hours">
+              <strong>ORARI DI APERTURA</strong><br />
+              Lunedi - Mercoledi - Sabato: 9:30 - 17:30<br />
+              Martedi - Giovedi - Venerdi: 9:30 - 19:30<br />
+              Domenica: Chiuso
+            </p>
+            <p class="follow-title">SEGUICI SU</p>
+            <div class="social-links" aria-label="Social">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/shanti.beautystudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Shanti Beauty Studio"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="34"
+                  height="34"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+              <a
+                class="social-link"
+                href="https://www.facebook.com/ShantiBeautyStudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Shanti Beauty Studio"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="34"
+                  height="34"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14 8.5V7.2c0-.7.5-1.2 1.2-1.2H17V3h-2.4C12 3 10.5 4.6 10.5 7v1.5H8v3h2.5V21H14v-9.5h2.6l.4-3H14Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="footer">
@@ -122,5 +316,78 @@
         <p>Partita IVA 02453080687</p>
       </footer>
     </div>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const navItems = document.querySelectorAll(".site-nav a");
+      const sections = document.querySelectorAll(".page-section[id]");
+      const homeSection = document.querySelector("#home");
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = document.body.classList.toggle("nav-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute("aria-label", isOpen ? "Chiudi menu" : "Apri menu");
+      });
+
+      navItems.forEach((link) => {
+        link.addEventListener("click", () => {
+          document.body.classList.remove("nav-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Apri menu");
+        });
+      });
+
+      const setActiveLink = () => {
+        let currentId = "home";
+        const pageBottom =
+          window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight - 4;
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= 240) {
+            currentId = section.id;
+          }
+        });
+
+        if (pageBottom && sections.length) {
+          currentId = sections[sections.length - 1].id;
+        }
+
+        navLinks.forEach((link) => {
+          const isCurrent = link.getAttribute("href") === `#${currentId}`;
+          link.classList.toggle("is-active", isCurrent);
+          if (isCurrent) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const setHeaderState = () => {
+        const homeBottom = homeSection.getBoundingClientRect().bottom;
+        document.body.classList.toggle("header-compact", homeBottom <= 120);
+      };
+
+      window.addEventListener("scroll", () => {
+        setActiveLink();
+        setHeaderState();
+      }, { passive: true });
+      window.addEventListener("hashchange", () => {
+        window.setTimeout(() => {
+          setActiveLink();
+          setHeaderState();
+        }, 350);
+      });
+      window.addEventListener("load", () => {
+        window.setTimeout(() => {
+          setActiveLink();
+          setHeaderState();
+        }, 350);
+      });
+      setActiveLink();
+      setHeaderState();
+    </script>
   </body>
 </html>

@@ -35,21 +35,24 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <title>Chi siamo | Shanti Beauty Studio</title>
+    <meta http-equiv="refresh" content="0; url=./index.html#chi-siamo" />
   </head>
   <body>
     <div class="container">
       <header class="header">
         <img src="./logo.png" alt="Shanti Beauty Studio" class="logo" />
         <nav class="site-nav" aria-label="Menu principale">
-          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./index.html#home">Home</a>
+          <a class="nav-link" href="./index.html#filosofia">Filosofia</a>
           <a
             class="nav-link is-active"
-            href="./chi-siamo.html"
+            href="./index.html#chi-siamo"
             aria-current="page"
           >
             Chi siamo
           </a>
-          <a class="nav-link" href="./contatti.html">Contatti</a>
+          <a class="nav-link" href="./index.html#servizi">Servizi</a>
+          <a class="nav-link" href="./index.html#contatti">Contatti</a>
         </nav>
       </header>
 
@@ -112,5 +115,8 @@
         <p>Partita IVA 02453080687</p>
       </footer>
     </div>
+    <script>
+      window.location.replace("./index.html#chi-siamo");
+    </script>
   </body>
 </html>
