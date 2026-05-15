@@ -102,8 +102,8 @@ body {
 
 /* Header */
 .header {
-  --header-padding: clamp(3rem, 8vw, 6rem);
-  --logo-width: min(60vw, 720px);
+  --header-padding: clamp(2.4rem, 6vw, 4.5rem);
+  --logo-width: min(54vw, 620px);
   position: absolute;
   top: 0;
   left: 0;
@@ -112,7 +112,7 @@ body {
   text-align: center;
   padding: var(--header-padding) 0 calc(var(--header-padding) * 0.7);
   background:
-    url("./brand-cloud.png") center 42% / min(720px, 72vw) auto no-repeat,
+    url("./brand-cloud.png") center 45% / max(118vw, 1180px) auto no-repeat,
     transparent;
   transition:
     padding 260ms ease,
@@ -120,7 +120,30 @@ body {
     box-shadow 260ms ease;
 }
 
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    url("./brand-cloud.png"),
+    url("./brand-cloud.png");
+  background-position:
+    right -8vw center,
+    left -14vw center;
+  background-repeat: no-repeat;
+  background-size:
+    min(58vw, 680px) auto,
+    min(42vw, 520px) auto;
+  opacity: 0.2;
+  filter: saturate(1.16) contrast(1.14);
+  mix-blend-mode: multiply;
+}
+
 .logo {
+  position: relative;
+  z-index: 1;
   display: block;
   width: var(--logo-width);
   max-width: 100%;
@@ -148,8 +171,12 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+.header-compact .header::before {
+  display: none;
+}
+
 .header-compact .logo {
-  width: clamp(7.5rem, 13vw, 11rem);
+  width: clamp(8.4rem, 14.5vw, 12.25rem);
   margin: 0;
 }
 
@@ -246,7 +273,8 @@ body {
 .hero-section {
   position: relative;
   isolation: isolate;
-  min-height: clamp(30rem, 58vw, 40rem);
+  overflow: hidden;
+  min-height: clamp(38rem, 60vw, 46rem);
   margin-bottom: 0;
 }
 
@@ -257,21 +285,20 @@ body {
   bottom: 0;
   left: calc(50% - 50vw);
   right: calc(50% - 50vw);
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
-  background-image:
-    url("./brand-cloud.png"),
-    url("./brand-cloud.png");
-  background-position:
-    center 12%,
-    center calc(100% + 8rem);
+  background-image: url("./brand-cloud.png");
+  background-position: center 8%;
   background-repeat: no-repeat;
-  background-size:
-    min(760px, 74vw) auto,
-    min(860px, 82vw) auto;
-  opacity: 0.58;
-  filter: saturate(1.12) contrast(1.08);
+  background-size: max(122vw, 1280px) auto;
+  opacity: 0.46;
+  filter: saturate(1.04) contrast(0.96) brightness(1.08);
   mix-blend-mode: multiply;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .philosophy-section {
@@ -811,6 +838,18 @@ address p {
   letter-spacing: 0.05em;
 }
 
+@media (max-width: 1200px) {
+  .philosophy-section::before {
+    background-position: 64% center;
+  }
+}
+
+@media (max-width: 920px) {
+  .philosophy-section::before {
+    background-position: 62% center;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   html {
@@ -818,8 +857,8 @@ address p {
   }
 
   .header {
-    --header-padding: clamp(2.5rem, 14vw, 4rem);
-    --logo-width: 82vw;
+    --header-padding: clamp(2rem, 10vw, 3.2rem);
+    --logo-width: 74vw;
   }
 
   .header-compact .header {
@@ -830,7 +869,7 @@ address p {
   }
 
   .header-compact .logo {
-    width: clamp(6.8rem, 33vw, 9rem);
+    width: clamp(7.4rem, 36vw, 9.8rem);
   }
 
   .main {
@@ -963,17 +1002,13 @@ address p {
   }
 
   .hero-section {
-    min-height: clamp(24rem, 92vw, 34rem);
+    min-height: clamp(22rem, 86vw, 39rem);
     margin-bottom: 0;
   }
 
   .hero-section::before {
-    background-position:
-      center 10%,
-      center calc(100% + 5rem);
-    background-size:
-      88vw auto,
-      106vw auto;
+    background-position: center 7%;
+    background-size: 150vw auto;
     opacity: 0.5;
   }
 

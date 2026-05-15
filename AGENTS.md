@@ -9,3 +9,6 @@ To run the website, use:
 ```
 
 Valentina prefers using the Codex integrated browser to debug the site.
+
+Official logo reference: `/Users/ciav/Desktop/LOGO FINALE> shanti beauty studio.svg`.
+The website uses this logo as `static/logo.svg`.
