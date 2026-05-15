@@ -59,6 +59,12 @@
             "dayOfWeek": ["Tuesday", "Thursday", "Friday"],
             "opens": "09:30",
             "closes": "19:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "00:00",
+            "closes": "00:00"
           }
         ],
         "potentialAction": {
@@ -77,6 +83,7 @@
             Home
           </a>
           <a class="nav-link" href="./chi-siamo.html">Chi siamo</a>
+          <a class="nav-link" href="./contatti.html">Contatti</a>
         </nav>
       </header>
 
@@ -92,7 +99,8 @@
             <p class="hours">
               <strong>Orari:</strong><br />
               Lunedi - Mercoledi - Sabato: 9:30 - 17:30<br />
-              Martedi - Giovedi - Venerdi: 9:30 - 19:30
+              Martedi - Giovedi - Venerdi: 9:30 - 19:30<br />
+              Domenica: Chiuso
             </p>
           </div>
         </section>
@@ -111,15 +119,8 @@
 
       <footer class="footer">
         <p>&copy; 2026 Shanti Beauty Studio. Tutti i diritti riservati.</p>
+        <p>Partita IVA 02453080687</p>
       </footer>
     </div>
-    <script>
-      const setHeaderState = () => {
-        document.body.classList.toggle("site-scrolled", window.scrollY > 24);
-      };
-
-      setHeaderState();
-      window.addEventListener("scroll", setHeaderState, { passive: true });
-    </script>
   </body>
 </html>

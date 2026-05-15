@@ -90,27 +90,13 @@ body {
 .header {
   --header-padding: clamp(3rem, 8vw, 6rem);
   --logo-width: min(60vw, 720px);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 10;
   text-align: center;
   padding: var(--header-padding) 0 calc(var(--header-padding) * 0.7);
   background:
-    linear-gradient(rgba(250, 249, 247, 0.78), rgba(250, 249, 247, 0.78)),
     url("./brand-cloud.png") center 42% / min(720px, 72vw) auto no-repeat,
-    var(--color-background);
-  backdrop-filter: blur(10px);
-  transition: padding 220ms ease, box-shadow 220ms ease, background 220ms ease;
-}
-
-.site-scrolled .header {
-  --header-padding: 0.9rem;
-  --logo-width: min(34vw, 420px);
-  background:
-    linear-gradient(rgba(250, 249, 247, 0.76), rgba(250, 249, 247, 0.76)),
-    url("./brand-cloud.png") center 45% / min(520px, 58vw) auto no-repeat,
-    var(--color-background);
-  box-shadow: none;
+    transparent;
 }
 
 .logo {
@@ -119,11 +105,6 @@ body {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  transition: width 220ms ease, margin 220ms ease;
-}
-
-.site-scrolled .logo {
-  margin-bottom: 0;
 }
 
 .site-nav {
@@ -188,10 +169,10 @@ body {
 }
 
 .address {
-  background: white;
+  background: transparent;
   padding: 2.5rem;
   border-radius: 4px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   display: inline-block;
   min-width: 300px;
 }
@@ -229,16 +210,55 @@ address p {
 .about-media {
   order: 2;
   display: flex;
+  align-items: center;
   justify-content: center;
+  position: relative;
+  isolation: isolate;
+  min-height: 340px;
+  overflow: hidden;
 }
 
 .about-photo {
+  position: relative;
+  z-index: 1;
   width: clamp(180px, 24vw, 260px);
+  height: clamp(180px, 24vw, 260px);
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 36%;
   border-radius: 50%;
   box-shadow: 0 18px 42px rgba(79, 28, 18, 0.14);
+}
+
+.about-media::before,
+.about-media::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: clamp(118px, 16vw, 178px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.about-media::before {
+  right: calc(50% + 253px);
+  top: 91%;
+  aspect-ratio: 764 / 1103;
+  background-image: url("./albero-1.png");
+  transform: translateY(-50%) scale(1.46, -1.2) rotate(-86deg);
+  transform-origin: right center;
+}
+
+.about-media::after {
+  left: 50%;
+  top: 39%;
+  aspect-ratio: 764 / 1103;
+  background-image: url("./albero-1.png");
+  transform: translate(144px, -54%) scaleX(1.46) rotate(18deg);
+  transform-origin: left center;
 }
 
 .about-content {
@@ -263,7 +283,16 @@ address p {
   font-weight: 500;
   line-height: 1.15;
   color: var(--color-secondary);
-  margin-bottom: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-content .about-subtitle {
+  color: var(--brand-terracotta);
+  font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .about-content p {
@@ -273,6 +302,59 @@ address p {
 
 .about-content p:last-child {
   margin-bottom: 0;
+}
+
+.contact-section {
+  margin-bottom: 4rem;
+}
+
+.contact-content {
+  width: min(100%, 780px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-secondary);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.contact-address {
+  margin: 1.5rem 0 1.75rem;
+  color: var(--color-text);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+}
+
+.contact-link {
+  color: var(--brand-brown);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+  transition: color 180ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--brand-terracotta);
+}
+
+.contact-link:focus-visible {
+  outline: 1px solid var(--brand-brown);
+  outline-offset: 5px;
 }
 
 /* Booking Section */
@@ -327,11 +409,6 @@ address p {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .site-scrolled .header {
-    --header-padding: 0.75rem;
-    --logo-width: 52vw;
-  }
-
   .header {
     --header-padding: clamp(2.5rem, 14vw, 4rem);
     --logo-width: 82vw;
@@ -383,7 +460,7 @@ address p {
   }
 
   .nav-link {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
   }
 
   .about-section {
@@ -393,5 +470,30 @@ address p {
 
   .about-photo {
     width: 190px;
+    height: 190px;
+  }
+
+  .about-media {
+    min-height: 260px;
+  }
+
+  .about-media::before {
+    right: calc(50% + 95px);
+    width: 112px;
+    transform: translateY(-46%) scale(1.34, -1) rotate(-18deg);
+  }
+
+  .about-media::after {
+    width: 112px;
+    transform: translate(56px, -54%) scaleX(1.34) rotate(18deg);
+  }
+
+  .contact-section {
+    margin-bottom: 3rem;
+  }
+
+  .contact-links {
+    align-items: center;
+    flex-direction: column;
   }
 }
