@@ -1,60 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Shanti Beauty Studio - Your destination for beauty and wellness"
+      content="Shanti Beauty Studio a Pescara. Vieni a trovarci in Viale Gabriele D'Annunzio, 222-226 e prenota online il tuo appuntamento beauty."
+    />
+    <link rel="canonical" href="https://www.shantibeautystudio.com/" />
+    <meta
+      property="og:title"
+      content="Shanti Beauty Studio | Centro Beauty a Pescara"
+    />
+    <meta
+      property="og:description"
+      content="Shanti Beauty Studio a Pescara. Vieni a trovarci in Viale Gabriele D'Annunzio, 222-226 e prenota online il tuo appuntamento beauty."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.shantibeautystudio.com/" />
+    <meta
+      property="og:image"
+      content="https://www.shantibeautystudio.com/logo.png"
     />
     <link rel="icon" type="image/png" href="./logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.cdnfonts.com/css/lazuardi" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
-    <title>Shanti Beauty Studio</title>
+    <title>Shanti Beauty Studio | Centro Beauty a Pescara</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Shanti Beauty Studio",
+        "url": "https://www.shantibeautystudio.com/",
+        "image": "https://www.shantibeautystudio.com/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Viale Gabriele D'Annunzio, 222-226",
+          "postalCode": "65127",
+          "addressLocality": "Pescara",
+          "addressRegion": "PE",
+          "addressCountry": "IT"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Wednesday", "Saturday"],
+            "opens": "09:30",
+            "closes": "17:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Thursday", "Friday"],
+            "opens": "09:30",
+            "closes": "19:30"
+          }
+        ],
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": "https://cal.com/shanti-beauty-studio-xatskc"
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="container">
       <header class="header">
         <img src="./logo.png" alt="Shanti Beauty Studio" class="logo" />
-        <h1 class="studio-name">Shanti</h1>
-        <p class="tagline">Beauty Studio</p>
+        <nav class="site-nav" aria-label="Menu principale">
+          <a class="nav-link is-active" href="./index.html" aria-current="page">
+            Home
+          </a>
+          <a class="nav-link" href="./chi-siamo.html">Chi siamo</a>
+        </nav>
       </header>
 
       <main class="main">
         <section class="info-section">
           <div class="address">
-            <h2>Visit Us</h2>
+            <h2>Vieni A Trovarci</h2>
             <address>
-              <p>123 Beauty Lane</p>
-              <p>Suite 100</p>
-              <p>New York, NY 10001</p>
+              <p>Viale Gabriele D'Annunzio, 222-226</p>
+              <p>65127 Pescara PE</p>
+              <p>Italy</p>
             </address>
             <p class="hours">
-              <strong>Hours:</strong><br />
-              Mon - Sat: 9:00 AM - 7:00 PM<br />
-              Sunday: Closed
+              <strong>Orari:</strong><br />
+              Lunedi - Mercoledi - Sabato: 9:30 - 17:30<br />
+              Martedi - Giovedi - Venerdi: 9:30 - 19:30
             </p>
           </div>
         </section>
 
         <section class="booking-section">
-          <h2>Book an Appointment</h2>
-          <div class="cal-embed">
-            <iframe
-              src="https://cal.com/flavio-de-stefano-ytejjf"
-              frameborder="0"
-              width="100%"
-              height="600"
-              title="Schedule an appointment"
-            ></iframe>
-          </div>
+          <a
+            class="booking-button"
+            href="https://cal.com/shanti-beauty-studio-xatskc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Prenota Il Tuo Appuntamento
+          </a>
         </section>
       </main>
 
       <footer class="footer">
-        <p>&copy; 2025 Shanti Beauty Studio. All rights reserved.</p>
+        <p>&copy; 2026 Shanti Beauty Studio. Tutti i diritti riservati.</p>
       </footer>
     </div>
     <script>
