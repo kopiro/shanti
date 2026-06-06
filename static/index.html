@@ -371,7 +371,11 @@
       };
 
       const setHeaderState = () => {
-        document.body.classList.toggle("header-compact", window.scrollY >= 300);
+        const isMobileMenu = window.matchMedia("(max-width: 768px)").matches;
+        document.body.classList.toggle(
+          "header-compact",
+          !isMobileMenu && window.scrollY >= 300
+        );
       };
 
       window.addEventListener("scroll", () => {
@@ -390,6 +394,7 @@
           setHeaderState();
         }, 350);
       });
+      window.addEventListener("resize", setHeaderState);
       setActiveLink();
       setHeaderState();
     </script>
