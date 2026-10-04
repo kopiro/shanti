@@ -105,6 +105,8 @@
           <a class="nav-link" href="#contatti">Contatti</a>
           <a
             class="nav-cta"
+            data-analytics-event="booking_click"
+            data-analytics-placement="header"
             href="https://cal.com/shanti-beauty-studio-xatskc"
             target="_blank"
             rel="noopener noreferrer"
@@ -187,6 +189,8 @@
         <section class="booking-section" aria-label="Prenotazione">
           <a
             class="booking-button"
+            data-analytics-event="booking_click"
+            data-analytics-placement="after_services"
             href="https://cal.com/shanti-beauty-studio-xatskc"
             target="_blank"
             rel="noopener noreferrer"
@@ -247,7 +251,7 @@
                 <p>Viale Gabriele D'Annunzio, 222-226</p>
                 <p>65127 Pescara PE</p>
                 <p>Italia</p>
-                Telefono: <a class="contact-link" href="tel:+393762958208">+39 376 2958208</a>
+                Telefono: <a class="contact-link" href="tel:+393762958208" data-analytics-event="phone_click" data-analytics-placement="contacts">+39 376 2958208</a>
               </div>
             </address>
 
@@ -255,6 +259,8 @@
               <a
                 class="contact-link"
                 href="https://www.google.com/maps/search/?api=1&amp;query=Viale%20Gabriele%20D%27Annunzio%2C%20222-226%2C%2065127%20Pescara%20PE"
+                data-analytics-event="directions_click"
+                data-analytics-provider="google"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -263,6 +269,8 @@
               <a
                 class="contact-link"
                 href="https://maps.apple.com/?q=Viale%20Gabriele%20D%27Annunzio%2C%20222-226%2C%2065127%20Pescara%20PE"
+                data-analytics-event="directions_click"
+                data-analytics-provider="apple"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -281,6 +289,8 @@
               <a
                 class="social-link"
                 href="https://www.instagram.com/shanti.beautystudio/"
+                data-analytics-event="social_click"
+                data-analytics-platform="instagram"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram Shanti Beauty Studio"
@@ -304,6 +314,8 @@
               <a
                 class="social-link"
                 href="https://www.facebook.com/ShantiBeautyStudio"
+                data-analytics-event="social_click"
+                data-analytics-platform="facebook"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Shanti Beauty Studio"
@@ -331,6 +343,25 @@
       </footer>
     </div>
     <script>
+      document.addEventListener("click", (event) => {
+        const link = event.target instanceof Element
+          ? event.target.closest("a[data-analytics-event]")
+          : null;
+        if (!link || typeof window.gtag !== "function") return;
+
+        const parameters = {};
+        for (const name of ["placement", "provider", "platform"]) {
+          const value = link.getAttribute(`data-analytics-${name}`);
+          if (value) parameters[name] = value;
+        }
+
+        try {
+          window.gtag("event", link.dataset.analyticsEvent, parameters);
+        } catch {
+          // Analytics must never interfere with the link's default action.
+        }
+      });
+
       const navToggle = document.querySelector(".nav-toggle");
       const navLinks = document.querySelectorAll(".nav-link");
       const navItems = document.querySelectorAll(".site-nav a");
